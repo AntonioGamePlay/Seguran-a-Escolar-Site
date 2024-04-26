@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+
+<body>
+    <nav class="barralateral">
+        <div class="logo-menu">
+         <h2 class="logo">Meu app</h2>
+         <i class='bx bx-menu barrinha'></i>
+        </div>
+
+        <ul class="lista">
+            <li class="lista-itens ativo">
+           <a href="#">
+               <i class='bx bx-x'></i>
+               <span class="nome-link" style="--i:1;">Emergencia</span>
+             </a> 
+            </li>
+        <li class="lista-itens">
+            <a href="#"> 
+                <i class='bx bxs-hot'></i>
+            <span class="nome-link" style="--i:2;">Brigas</span>
+         </a> 
+        </li>
+         <li class="lista-itens">
+            <a href="#"> 
+                <i class='bx bxs-face'></i>
+            <span class="nome-link" style="--i:3;">Estranho Na Escola </span>
+            </a>
+        </li>
+         <li class="lista-itens">
+            <a href="#"> 
+                <i class='bx bxs-paper-plane'></i>
+            <span class="nome-link" style="--i:4;">Incidente</span>
+            </a>
+        </li>
+         <li class="lista-itens">
+            <a href="#"> 
+                <i class='bx bx-question-mark'></i>
+            <span class="nome-link" style="--i:5;">Outros</span>
+        </a> 
+        </li>
+        <li class="lista-itens">
+            <a href="#"> 
+                <i class='bx bxs-exit'></i>
+            <span class="nome-link" style="--i:6;">Sair</span>
+        </a> 
+        </li>
+        </ul>
+     </nav>
+<script src="script.js"></script>
+
+
+<script>
+    function enviarEmail() {
+        fetch('/enviar-email', {
+            method: 'POST'
+        })
+        .then(response => {
+            if (response.ok) {
+                console.log('Email enviado com sucesso!');
+            } else {
+                console.error('Falha ao enviar o email.');
+            }
+        })
+        .catch(error => {
+            console.error('Erro:', error);
+        });
+    }
+
+    document.querySelector('.bx.bxs-face').parentElement.addEventListener('click', () => {
+        enviarEmail();
+    });
+</script>
+
+
+    <footer class="footer"> <a href="https://www.freepik.com/free-photo/friends-having-fun-their-reunion_21248686.htm#fromView=search&page=1&position=2&uuid=d8dfe18d-202f-4175-82d1-94b9c85997a9">Image by freepik</a>
+        </footer>
+
+        </body>
+</html>
